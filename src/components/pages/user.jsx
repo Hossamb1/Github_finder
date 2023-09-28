@@ -1,12 +1,12 @@
 import { useContext, useEffect } from "react";
-import { Await, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GithubContext from "../context/github/githubContext";
 import { useParams } from "react-router-dom";
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
 import Spinner from "./assets/Spinner";
-
 import RepoList from "../repos/repoList";
 import { getUserAndRepos } from "../context/github/githubActions";
+
 const User = () => {
   const { user, repos, dispatch, loading } = useContext(GithubContext);
 
