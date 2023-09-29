@@ -1,11 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { GithubProvider } from "./components/context/github/githubContext";
 import { AlertProvider } from "./components/context/alert/alertContext";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const domNode = document.getElementById("root");
+const root = createRoot(domNode);
 root.render(
   <React.StrictMode>
     <GithubProvider>

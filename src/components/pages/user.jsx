@@ -8,7 +8,7 @@ import RepoList from "../repos/repoList";
 import { getUserAndRepos } from "../context/github/githubActions";
 
 const User = () => {
-  const { user, repos, dispatch, loading } = useContext(GithubContext);
+  const { user, repos, dispatch, isLoading } = useContext(GithubContext);
 
   const params = useParams();
 
@@ -40,7 +40,7 @@ const User = () => {
 
   const websiteUrl = blog?.startsWith("http") ? blog : "https://" + blog;
 
-  if (loading) {
+  if (isLoading) {
     return <Spinner />;
   }
   return (
@@ -54,7 +54,7 @@ const User = () => {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8">
           <div className="custom-card-image mb-6 md:mb-0">
-            <div className="rounded-lg shadow-xl card image-full">
+            <div className="rounded-lg shadow-xl card image-full ">
               <figure>
                 <img src={avatar_url} alt="" />
               </figure>
